@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'todos/index,'
+  get 'todos/index'
 
-  get 'todos/show,'
+  get 'todos/show'
 
-  get 'todos/new,'
+  get 'todos/new'
 
   get 'todos/destroy'
 
