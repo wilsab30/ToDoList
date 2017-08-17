@@ -1,0 +1,11 @@
+<section>
+<%= form_for @mytodo, url: create_path do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :description %>
+<%= f.text_area :description %>
+<%= f.label :complete %>
+<%= f.check_box :finished %>
+<%= f.submit %>
+<%end%>
+</section>
