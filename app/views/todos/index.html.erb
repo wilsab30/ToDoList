@@ -1,14 +1,20 @@
 <h1>My Todo List</h1>
 <p><%= link_to('Add New Todo', new_path) %></p>
 <% @mytodos.each do |todo|%>
-      <article class="tile">
-    <h2> <%= link_to(todo.title, show_path(todo[:id]))%></h2>
-    <h3> <%= todo.due_date %><h3>
+      <article class="title">
+    <h3> <%= todo.title %><h3>
+    <h2> <%= link_to("More details", show_path(todo[:id]))%></h2>
+          <% if todo.finished != true && todo.due_date < DateTime.now %>
+               <h2>OVER DUE!!<h2>
+               <h3> <%= todo.due_date %><h3>
+          <% else %>
+          <h3> <%= todo.due_date %><h3>
+          <% end %>
     <p class="link"><%= link_to('Edit', edit_path(todo.id)) %></p>
         <% if todo.finished
-        button_label = "Mark Not complete"
+        button_label = "Task Complete"
         else
-        button_label = "Mark complete"
+        button_label = "Task Not Complete"
         end %>
       <p><%= button_to button_label, toggle_path(todo.id), method: :patch %></p>
       <p><%= button_to 'Delete', {action: "destroy", id: todo.id}, method: :delete, data: {confirm: "Are you sure?"} %></p>
