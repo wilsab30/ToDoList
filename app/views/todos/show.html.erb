@@ -1,9 +1,9 @@
-<h1>My Todo List</h1>
+<h1><%= @mytodo.title %></h1>
 
 <article>
 
-  <h2> <%= link_to(@mytodo.title) %></h2>
     <h3> <%= @mytodo.description %><h3>
+    <h3> <%= @mytodo.due_date %><h3>
         <%if @mytodo.finished
            status = "Task Complete"
         else

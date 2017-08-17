@@ -16,6 +16,7 @@ class TodosController < ApplicationController
     s1.title = params[:todo_item][:title]
     s1.description = params[:todo_item][:description]
     s1.finished = params[:todo_item][:finished]
+    s1.due_date = params[:todo_item][:due_date]
     s1.save
     redirect_to action: "index"
   end
@@ -28,6 +29,7 @@ class TodosController < ApplicationController
     @mytodo[:title] = params[:todo_item]["title"]
     @mytodo[:description] = params[:todo_item]["description"]
     @mytodo[:finished] = params[:todo_item]["finished"]
+    @mytodo[:due_date] = params[:todo_item]["due_date"]
     @mytodo.save
     if @mytodo.finished == true
       @mytodo.completed_at = DateTime.now
