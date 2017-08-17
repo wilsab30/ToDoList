@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816224217) do
+ActiveRecord::Schema.define(version: 20170817195903) do
 
   create_table "todo_items", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170816224217) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "finished"
+    t.date "due_date"
   end
 
 end

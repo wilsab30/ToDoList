@@ -3,6 +3,7 @@
 <% @mytodos.each do |todo|%>
       <article class="tile">
     <h2> <%= link_to(todo.title, show_path(todo[:id]))%></h2>
+    <h3> <%= todo.due_date %><h3>
     <p class="link"><%= link_to('Edit', edit_path(todo.id)) %></p>
         <% if todo.finished
         button_label = "Mark Not complete"

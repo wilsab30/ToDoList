@@ -2,6 +2,8 @@
 <%= form_for @mytodo, url: create_path do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
+<%= f.label :due_date %>
+<%= f.date_field :due_date %>
 <%= f.label :description %>
 <%= f.text_area :description %>
 <%= f.label :complete %>
