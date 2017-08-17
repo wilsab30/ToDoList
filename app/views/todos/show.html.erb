@@ -1,2 +1,18 @@
-<h1>Todos#show,</h1>
-<p>Find me in app/views/todos/show.html.erb</p>
+<h1>My Todo List</h1>
+
+<article>
+
+  <h2> <%= link_to(@mytodo.title) %></h2>
+    <h3> <%= @mytodo.description %><h3>
+        <%if @mytodo.finished
+           status = "Task Complete"
+        else
+        status = "Task Not Complete"
+        end%>
+
+      <h3> <%= status %><h3>
+  <p><%= link_to('Edit', edit_path(@mytodo.id)) %></p>
+
+
+
+</article>
