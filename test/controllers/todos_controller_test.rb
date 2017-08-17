@@ -2,22 +2,22 @@ require 'test_helper'
 
 class TodosControllerTest < ActionDispatch::IntegrationTest
   test "should get index," do
-    get todos_index,_url
+    get :index
     assert_response :success
   end
 
   test "should get show," do
-    get todos_show,_url
+    get :show
     assert_response :success
   end
 
   test "should get new," do
-    get todos_new,_url
+    get :new
     assert_response :success
   end
 
   test "should get destroy" do
-    get todos_destroy_url
+    get :destroy
     assert_response :success
   end
 

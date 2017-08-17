@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'homepages/index'
+  root to: 'homepages#index'
+
   get 'todos/index'
 
   get 'todos/show/:id' =>'todos#show', as: 'show'

@@ -1,2 +1,13 @@
-<h1>Todos#index,</h1>
-<p>Find me in app/views/todos/index.html.erb</p>
+<h1>My Todo List</h1>
+<p><%= link_to('Add New Todo', new_path) %></p>
+<% @mytodos.each do |todo|%>
+      <article class="tile">
+    <h2> <%= link_to(todo.title, show_path(todo[:id]))%></h2>
+    <p class="link"><%= link_to('Edit', edit_path(todo.id)) %></p>
+        <% if todo.finished
+        button_label = "Mark Not complete"
+        else
+        button_label = "Mark complete"
+        end %>
+  <%end%>
+    </article>
