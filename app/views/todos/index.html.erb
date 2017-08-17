@@ -9,5 +9,7 @@
         else
         button_label = "Mark complete"
         end %>
+      <p><%= button_to button_label, toggle_path(todo.id), method: :patch %></p>
+      <p><%= button_to 'Delete', {action: "destroy", id: todo.id}, method: :delete, data: {confirm: "Are you sure?"} %></p>
   <%end%>
     </article>

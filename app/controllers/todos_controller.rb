@@ -36,7 +36,15 @@ class TodosController < ApplicationController
   redirect_to action: "index"
   end
 
+  def toggle_completed
+      @mytodo = TodoItem.find(params[:id].to_i)
+      @mytodo.update(finished: !@mytodo.finished)
+      redirect_to action: "index"
+    end
+
   def destroy
+    @mytodo = TodoItem.destroy(params[:id].to_i)
+    redirect_to action: "index"
   end
 
 

@@ -12,7 +12,7 @@
 
       <h3> <%= status %><h3>
   <p><%= link_to('Edit', edit_path(@mytodo.id)) %></p>
-
+  <p><%= button_to 'Delete', {action: "destroy", id: @mytodo.id}, method: :delete, data: {confirm: "Are you sure?"} %></p>
 
 
 </article>
