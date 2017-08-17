@@ -43,7 +43,7 @@ class TodosController < ApplicationController
       @mytodo.update(finished: !@mytodo.finished)
       redirect_to action: "index"
     end
-
+    
   def destroy
     @mytodo = TodoItem.destroy(params[:id].to_i)
     redirect_to action: "index"

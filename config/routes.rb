@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  # get 'homepages/index'
+
   get 'todos/index' =>'todos#index', as: 'index'
 
-  # get 'todos/index'
-  # root to: 'todos#index'
+  root to: 'todos#index'
 
   get 'todos/show/:id' =>'todos#show', as: 'show'
 
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
 
   post 'todos/create' =>'todos#create', as: 'create'
 
-  patch 'tasks/:id/toggle_completed' => 'tasks#toggle_completed', as:'toggle'
+  patch 'todos/:id/toggle_completed' => 'todos#toggle_completed', as:'toggle'
 
   delete 'todos/:id/destroy' => 'todos#destroy', as: 'delete'
 
